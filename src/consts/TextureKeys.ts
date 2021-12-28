@@ -4,7 +4,12 @@ enum TextureKeys
     FoxRun = 'fox-run',
     FoxJump = 'fox-jump',
     FoxFall = 'fox-fall',
-    FoxCrouch = 'fox-crouch'
+    FoxCrouch = 'fox-crouch',
+    FoxHurt = 'fox-hurt',
+    Enemies = 'enemies',
+    OpossumRun = 'opossum-run',
+    Destroy = 'destroy',
+    Piranha = 'piranha'
 }
 
 export default TextureKeys

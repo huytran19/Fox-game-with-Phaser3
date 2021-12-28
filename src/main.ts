@@ -2,6 +2,7 @@ import Phaser from 'phaser'
 
 import Preloader from './scenes/Preloader'
 import Game from './scenes/Game'
+import GameOver from './scenes/GameOver'
 
 const config: Phaser.Types.Core.GameConfig = {
 	type: Phaser.AUTO,
@@ -14,9 +15,12 @@ const config: Phaser.Types.Core.GameConfig = {
 			debug: false
 		}
 	},
-	scene: [Preloader, Game],
+	scene: [Preloader, Game, GameOver],
 	scale: {
 		zoom: 1.5
+	},
+	audio: {
+		disableWebAudio: true
 	}
 }
 
