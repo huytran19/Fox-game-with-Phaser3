@@ -1,0 +1,60 @@
+{"frames": {
+
+"frog-idle-1.png":
+{
+	"frame": {"x":34,"y":35,"w":28,"h":21},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":3,"y":7,"w":28,"h":21},
+	"sourceSize": {"w":35,"h":32}
+},
+"frog-idle-2.png":
+{
+	"frame": {"x":1,"y":35,"w":31,"h":22},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":6,"w":31,"h":22},
+	"sourceSize": {"w":35,"h":32}
+},
+"frog-idle-3.png":
+{
+	"frame": {"x":64,"y":34,"w":33,"h":23},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":5,"w":33,"h":23},
+	"sourceSize": {"w":35,"h":32}
+},
+"frog-idle-4.png":
+{
+	"frame": {"x":1,"y":35,"w":31,"h":22},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":6,"w":31,"h":22},
+	"sourceSize": {"w":35,"h":32}
+},
+"frog-jump-1.png":
+{
+	"frame": {"x":38,"y":1,"w":34,"h":31},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":1,"w":34,"h":31},
+	"sourceSize": {"w":35,"h":32}
+},
+"frog-jump-2.png":
+{
+	"frame": {"x":1,"y":1,"w":35,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":35,"h":32},
+	"sourceSize": {"w":35,"h":32}
+}},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "frog.png",
+	"format": "RGBA8888",
+	"size": {"w":98,"h":58},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:b4e3336bc23670e1365eaf3460440e11:981faeec4baebe47c842520c0fe346fb:8dde0dd0197344c2f9f9f01d8d204375$"
+}
+}

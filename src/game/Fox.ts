@@ -15,6 +15,11 @@ export default class Fox extends Phaser.GameObjects.Container
     private bodyFox!: Phaser.Physics.Arcade.Body
     attack!: boolean
     loopSound!: boolean
+    private jumpSound!: Phaser.Sound.BaseSound
+    private attackSound!: Phaser.Sound.BaseSound
+    score: number = 0
+    private timeScore = 0
+    shieldOn!: boolean
 
     constructor(scene: Phaser.Scene, x: number, y: number)
     {
@@ -34,16 +39,29 @@ export default class Fox extends Phaser.GameObjects.Container
         this.cursors = scene.input.keyboard.createCursorKeys()
         this.attack = false
         this.loopSound = false
+        this.score = 0
+        this.timeScore = 0
+        this.shieldOn = false
     }
 
-    preUpdate()
+    preUpdate(t: number, dt: number)
     {
-        const jumpSound = this.scene.sound.add('jump')
-        const attackSound = this.scene.sound.add('attack')
+        this.jumpSound = this.scene.sound.add('jump')
+        this.attackSound = this.scene.sound.add('attack')
+        this.timeScore++
         switch(this.foxState)
         {
             case FoxState.Running:
                 {
+                    if (this.timeScore >= 10) {
+                        this.score ++
+                        if (this.score == 1000)
+                        {
+                            this.scene.scene.pause()
+                            this.scene.scene.run('game-win')
+                        }
+                        this.timeScore = 0
+                    }
                     if (this.bodyFox.onFloor())
                     {
                         this.attack = false
@@ -51,7 +69,7 @@ export default class Fox extends Phaser.GameObjects.Container
                             if (this.cursors.up.isDown)
                             {   
                                 this.bodyFox.velocity.y = -200
-                                this.playSound(jumpSound, false)
+                                this.playSound(this.jumpSound, false)
                             }
 
                             else if (this.cursors.down.isDown)
@@ -59,6 +77,8 @@ export default class Fox extends Phaser.GameObjects.Container
                                 this.fox.play(TextureKeys.FoxCrouch, true)
                                 this.bodyFox.setSize(this.fox.width - 16, this.fox.height - 16)
                                 this.bodyFox.setOffset(this.fox.width * -.5 + 10, -this.fox.height + 16)
+                                this.shieldOn = true
+                                // if (this.shieldOn) this.fox.setTint(0xFF0000)
                             } 
 
                             else
@@ -66,15 +86,17 @@ export default class Fox extends Phaser.GameObjects.Container
                                 this.fox.play(TextureKeys.FoxRun, true)
                                 this.bodyFox.setSize(this.fox.width - 16, this.fox.height - 8)
                                 this.bodyFox.setOffset(this.fox.width * -.5 + 6, -this.fox.height + 8)
+                                this.shieldOn = false
+                                // this.fox.setTint(0xffffff)
                             }
                     }
                     else
                     {
-                        if (this.cursors.down.isDown)
+                        if (this.cursors.down.isDown && !this.attack)
                         {
                             this.bodyFox.velocity.y = 250
                             this.fox.play(TextureKeys.FoxFall, true)
-                            this.playSound(attackSound, this.loopSound)
+                            this.playSound(this.attackSound, this.loopSound)
                             this.attack = true
                             this.loopSound = true
                         }
@@ -104,6 +126,7 @@ export default class Fox extends Phaser.GameObjects.Container
                     }, 1600)
                     if (!this.fox.visible)
                     {
+                        this.scene.scene.pause()
                         this.scene.scene.run('game-over')
                         if (this.cursors.space.isDown)
                         {
@@ -114,10 +137,6 @@ export default class Fox extends Phaser.GameObjects.Container
                     break
                 }
         }
-
-
-        
-        
     }
 
     playSound(s: Phaser.Sound.BaseSound, loop: boolean)

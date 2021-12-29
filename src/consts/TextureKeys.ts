@@ -9,7 +9,10 @@ enum TextureKeys
     Enemies = 'enemies',
     OpossumRun = 'opossum-run',
     Destroy = 'destroy',
-    Piranha = 'piranha'
+    Piranha = 'piranha',
+    FrogIdle = 'frog-idle',
+    FrogJump = 'frog-jump',
+    FrogFall = 'frog-fall'
 }
 
 export default TextureKeys
