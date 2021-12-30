@@ -1,37 +1,53 @@
 {
-	"name": "fox",
-	"version": "1.0.0",
-	"description": "A template project for Phaser 3 using Parceljs",
-	"scripts": {
-		"start": "parcel src/index.html -p 8000",
-		"build": "parcel build src/index.html --out-dir dist",
-		"test": "echo \"Error: no test specified\" && exit 1"
-	},
-	"author": "supertommy",
-	"license": "MIT",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/ourcade/phaser3-parcel-template.git"
-	},
-	"homepage": "https://github.com/ourcade/phaser3-parcel-template",
-	"devDependencies": {
-		"@babel/core": "^7.10.5",
-		"@babel/plugin-proposal-class-properties": "^7.10.4",
-		"babel-eslint": "^10.1.0",
-		"eslint": "^6.8.0",
-		"minimist": ">=1.2.2",
-		"parcel-plugin-clean-easy": "^1.0.2",
-		"parcel-plugin-static-files-copy": "^2.4.3",
-		"typescript": "^4.5.4"
-	},
-	"dependencies": {
-		"phaser": "^3.55.2"
-	},
-	"parcelCleanPaths": [
-		"dist"
-	],
-	"staticFiles": {
-		"staticPath": "public",
-		"watcherGlob": "**"
-	}
+  "name": "fox",
+  "version": "1.0.0",
+  "description": "A template project for Phaser 3 using Parceljs",
+  "scripts": {
+    "start": "parcel src/index.html -p 8000",
+    "build": "parcel build --no-minify src/index.html --out-dir dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "supertommy",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ourcade/phaser3-parcel-template.git"
+  },
+  "homepage": "https://github.com/ourcade/phaser3-parcel-template",
+  "devDependencies": {
+    "@babel/core": "^7.16.5",
+    "@babel/plugin-proposal-class-properties": "^7.16.5",
+    "@babel/preset-env": "^7.16.5",
+    "@babel/preset-react": "^7.16.5",
+    "babel-eslint": "^10.1.0",
+    "cssnano": "^5.0.14",
+    "eslint": "^6.8.0",
+    "minimist": ">=1.2.2",
+    "parcel-plugin-static-files-copy": "^2.4.3",
+    "postcss": "^8.4.5",
+    "typescript": "^4.5.4"
+  },
+  "dependencies": {
+    "phaser": "^3.55.2"
+  },
+  "parcelCleanPaths": [
+    "dist"
+  ],
+  "staticFiles": {
+    "staticPath": "public",
+    "watcherGlob": "**"
+  },
+  "bugs": {
+    "url": "https://github.com/ourcade/phaser3-parcel-template/issues"
+  },
+  "main": "index.js",
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-class-properties"
+    ]
+  }
 }
