@@ -19,7 +19,7 @@ export default class Preloader extends Phaser.Scene
         this.load.atlas('frog', 'spritesheet/frog.png', 'spritesheet/frog.json')
         this.load.audio('jump', 'audio/cartoon-jump.mp3')
         this.load.audio('attack', 'audio/attack.wav')
-        this.load.audio('losing', 'audio/losing.wav')
+        this.load.audio('losing', 'audio/Losing.wav')
         this.load.audio('platform', 'audio/platform.mp3')
         this.load.image('title', 'sprites/title-screen.png')
         this.load.image('enter', 'sprites/press-enter-text.png')
