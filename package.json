@@ -5,15 +5,16 @@
   "scripts": {
     "start": "parcel src/index.html -p 8000",
     "build": "parcel build --no-minify src/index.html --out-dir dist",
+	"deploy": "rm -rf dist && npm build && gh-pages -d dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "supertommy",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ourcade/phaser3-parcel-template.git"
+    "url": "git+https://github.com/huytran19/Fox-game-with-Phaser3.git"
   },
-  "homepage": "https://github.com/ourcade/phaser3-parcel-template",
+  "homepage": "https://huytran19.github.io/Fox-game-with-Phaser3",
   "devDependencies": {
     "@babel/core": "^7.16.5",
     "@babel/plugin-proposal-class-properties": "^7.16.5",
