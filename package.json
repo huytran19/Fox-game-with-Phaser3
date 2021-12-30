@@ -5,7 +5,7 @@
   "scripts": {
     "start": "parcel src/index.html -p 8000",
     "build": "parcel build --no-minify src/index.html --out-dir dist",
-	"deploy": "rm -rf dist && npm build && gh-pages -d dist",
+    "deploy": "rm -rf dist && npm run build && gh-pages -d dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "supertommy",
@@ -20,6 +20,7 @@
     "@babel/plugin-proposal-class-properties": "^7.16.5",
     "@babel/preset-env": "^7.16.5",
     "@babel/preset-react": "^7.16.5",
+    "ansi-regex": ">=5.0.1",
     "babel-eslint": "^10.1.0",
     "cssnano": "^5.0.14",
     "eslint": "^6.8.0",
@@ -29,6 +30,7 @@
     "typescript": "^4.5.4"
   },
   "dependencies": {
+    "gh-pages": "^3.2.3",
     "phaser": "^3.55.2"
   },
   "parcelCleanPaths": [
